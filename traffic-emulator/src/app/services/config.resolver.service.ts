@@ -3,8 +3,8 @@ import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { IntersectionConfig } from '../app.abstract';
 import { Observable, of } from 'rxjs';
 
-import configA from '../configs/configA.JSON';
 import { UtilService } from '../util.service';
+import { configA } from '../configs/configA';
 
 @Injectable({
   providedIn: 'root'

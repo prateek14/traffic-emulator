@@ -1,4 +1,6 @@
-{
+import { IntersectionConfig } from '../app.abstract';
+
+export const configA: IntersectionConfig = {
     "name": "3 way intersection",
     "pattern": [
         {
@@ -344,4 +346,4 @@
             ]
         }
     ]
-}
+};

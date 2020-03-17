@@ -26,7 +26,7 @@ export class CustomConfigComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       name: new FormControl(null, [Validators.required]),
-      lightCount: new FormControl(null, [Validators.min(3), Validators.required]),
+      lightCount: new FormControl(null, [Validators.required]),
     });
   }
 

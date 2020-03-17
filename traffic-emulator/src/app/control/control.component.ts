@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IntersectionConfig, IDictionary } from '../app.abstract';
 
-import configA from '../configs/configA.JSON';
-import configB from '../configs/configB.JSON';
 import { Router } from '@angular/router';
 import { UtilService } from '../util.service';
+import { configA } from '../configs/configA';
+import { configB } from '../configs/configB';
 
 @Component({
   selector: 'app-control',

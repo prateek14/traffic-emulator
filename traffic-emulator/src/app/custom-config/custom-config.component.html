@@ -20,18 +20,16 @@
                 matInput
                 required
                 type="number"
-                min="3"
                 formControlName="lightCount"
                 (change)="onCountChange()">
             <mat-error *ngIf="form.controls.lightCount.hasError('required')">Required.</mat-error>
-            <mat-error *ngIf="form.controls.lightCount.hasError('min')">Min Value is 3.</mat-error>
         </mat-form-field>
     </div>
 </form>
 <div
     class="flex flex-column"
     *ngIf="trafficLights.length>0">
-    <h4>Define Traffic Lights</h4>
+    <h4>Define Traffic Lights (Tap on the LED to change color)</h4>
     <div class="flex">
         <div
             class="tl-container flex flex-column"
@@ -55,7 +53,7 @@
 <div
     class="flex flex-column"
     *ngIf="trafficLights.length>0">
-    <h4>Traffic Light States</h4>
+    <h4>Traffic Light States (Tap on the LED to change State)</h4>
     <button
         type="button"
         mat-flat-button

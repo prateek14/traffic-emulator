@@ -1,4 +1,6 @@
-{
+import { IntersectionConfig } from '../app.abstract';
+
+export const configB: IntersectionConfig = {
     "name": "122",
     "pattern": [
         {
@@ -182,4 +184,4 @@
             "duration": 5
         }
     ]
-}
+};
