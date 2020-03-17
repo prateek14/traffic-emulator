@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.tl-container {
+    margin: 0 12px;
+    min-width: 100px;
+    min-height: 100px;
+    align-items: center;
+    border: solid 1px lightgray;
+}
+
+light-circle {
+    margin: 12px;
+}
+
+button,
+mat-form-field {
+    max-width: 200px;
+}
+
+.error-bg-color {
+    background-color: #b00020;
+}
+
+.container {
+    margin: 12px 0;
+}
+
+button.mat-flat-button {
+    margin: 12px 0;
+}

@@ -1,0 +1,15 @@
+<div *ngIf="config && currentState">
+    <h1>{{config.name}}</h1>
+    <countdown [config]="{leftTime: currentState.duration, template: '$!s!'}"></countdown>
+    <div class="flex">
+        <div
+            class="tl-container flex flex-column"
+            *ngFor="let tl of currentState.trafficLights">
+            <light-circle
+                *ngFor="let led of tl.leds"
+                [type]="led.type"
+                [state]="led.state">
+            </light-circle>
+        </div>
+    </div>
+</div>

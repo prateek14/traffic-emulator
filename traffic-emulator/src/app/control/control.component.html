@@ -1,0 +1,11 @@
+<h1>Control Panel</h1>
+<h2>Pre-defined Configs:</h2>
+<div class="flex">
+    <div
+        class="box flex flex-column"
+        *ngFor="let key of keys"
+        (click)="navigate(key)">
+        <h3>{{configDict[key].name}}</h3>
+    </div>
+</div>
+<app-custom-config></app-custom-config>

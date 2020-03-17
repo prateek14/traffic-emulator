@@ -1,0 +1,98 @@
+<h2>Custom Config:</h2>
+<form
+    *ngIf="form"
+    [formGroup]="form">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input
+                matInput
+                maxlength="64"
+                required
+                formControlName="name">
+            <mat-error *ngIf="form.controls.name.hasError('required')">Required.</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Traffic Light Count</mat-label>
+            <input
+                matInput
+                required
+                type="number"
+                min="3"
+                formControlName="lightCount"
+                (change)="onCountChange()">
+            <mat-error *ngIf="form.controls.lightCount.hasError('required')">Required.</mat-error>
+            <mat-error *ngIf="form.controls.lightCount.hasError('min')">Min Value is 3.</mat-error>
+        </mat-form-field>
+    </div>
+</form>
+<div
+    class="flex flex-column"
+    *ngIf="trafficLights.length>0">
+    <h4>Define Traffic Lights</h4>
+    <div class="flex">
+        <div
+            class="tl-container flex flex-column"
+            *ngFor="let tl of trafficLights">
+            <button
+                mat-icon-button
+                matTooltip="Add LED"
+                type="button"
+                (click)="addLED(tl)">
+                <mat-icon>add</mat-icon>
+            </button>
+            <light-circle
+                (click)="toggleColor(led)"
+                *ngFor="let led of tl.leds"
+                [type]="led.type"
+                [state]="led.state">
+            </light-circle>
+        </div>
+    </div>
+</div>
+<div
+    class="flex flex-column"
+    *ngIf="trafficLights.length>0">
+    <h4>Traffic Light States</h4>
+    <button
+        type="button"
+        mat-flat-button
+        (click)="addState()">
+        Add State
+    </button>
+    <div
+        class="flex flex-column"
+        *ngFor="let state of states">
+        <div class="flex">
+            <div
+                class="tl-container flex flex-column"
+                *ngFor="let tl of state.trafficLights">
+                <light-circle
+                    (click)="toggleState(led)"
+                    *ngFor="let led of tl.leds"
+                    [type]="led.type"
+                    [state]="led.state">
+                </light-circle>
+            </div>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>Duration (in seconds)</mat-label>
+            <input
+                matInput
+                required
+                type="number"
+                min="0"
+                [(ngModel)]="state.duration">
+        </mat-form-field>
+    </div>
+</div>
+<div class="container">
+    <button
+        mat-flat-button
+        type="button"
+        (click)="submit()">
+        GO!
+    </button>
+</div>
