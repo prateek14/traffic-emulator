@@ -8,4 +8,4 @@
         <h3>{{configDict[key].name}}</h3>
     </div>
 </div>
-<app-custom-config></app-custom-config>
+<app-custom-config (newConfig)="newConfig($event)"></app-custom-config>

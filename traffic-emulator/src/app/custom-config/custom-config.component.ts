@@ -117,9 +117,11 @@ export class CustomConfigComponent implements OnInit {
         pattern: this.states
       };
       if (this.isValid(config)) {
-        const id = this.utilService.guid();
-        this.utilService.setConfig(id, JSON.stringify(config));
-        this.router.navigate(['inter', id]);
+        this.newConfig.emit(config);
+        this.form.controls.name.patchValue(null);
+        this.form.controls.lightCount.patchValue(null);
+        this.trafficLights = [];
+        this.states = [];
       }
     } else {
       this.utilService.error('Form has errors.');

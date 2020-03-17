@@ -1,6 +1,8 @@
 <div *ngIf="config && currentState">
     <h1>{{config.name}}</h1>
-    <countdown [config]="{leftTime: currentState.duration, template: '$!s!'}"></countdown>
+    <countdown
+        *ngIf="currentState.duration"
+        [config]="{leftTime: currentState.duration, template: '$!s!'}"></countdown>
     <div class="flex">
         <div
             class="tl-container flex flex-column"

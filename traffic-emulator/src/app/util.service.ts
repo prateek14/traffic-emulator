@@ -22,6 +22,18 @@ export class UtilService {
     }
   }
 
+  public getAllConfigs() {
+    const configs = this.getLocalStorage('configs', null);
+    if (configs) {
+      const configDict = JSON.parse(configs);
+      Object.keys(configDict).forEach((key) => {
+        configDict[key] = JSON.parse(configDict[key]);
+      });
+      return configDict;
+    }
+    return null;
+  }
+
   public getConfig(key: string, defaultValue: string) {
     const configs = this.getLocalStorage('configs', null);
     if (configs) {
@@ -33,7 +45,7 @@ export class UtilService {
     return defaultValue;
   }
 
-  public setConfig(key: string, value: string) {
+  public setConfig(key: string | number, value: string) {
     let configs = this.getLocalStorage('configs', null);
     if (!configs) {
       configs = "{}";

@@ -1,7 +1,7 @@
 import { IntersectionConfig } from '../app.abstract';
 
 export const configA: IntersectionConfig = {
-    "name": "3 way intersection",
+    "name": "3 Way intersection with Turn",
     "pattern": [
         {
             "duration": 10,

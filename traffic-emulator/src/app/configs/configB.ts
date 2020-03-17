@@ -1,7 +1,7 @@
 import { IntersectionConfig } from '../app.abstract';
 
 export const configB: IntersectionConfig = {
-    "name": "122",
+    "name": "3 Way Intersection ",
     "pattern": [
         {
             "trafficLights": [
@@ -46,7 +46,7 @@ export const configB: IntersectionConfig = {
                     ]
                 }
             ],
-            "duration": 20
+            "duration": 5
         },
         {
             "trafficLights": [
@@ -91,7 +91,7 @@ export const configB: IntersectionConfig = {
                     ]
                 }
             ],
-            "duration": 20
+            "duration": 5
         },
         {
             "trafficLights": [
@@ -136,7 +136,7 @@ export const configB: IntersectionConfig = {
                     ]
                 }
             ],
-            "duration": 50
+            "duration": 15
         },
         {
             "trafficLights": [
